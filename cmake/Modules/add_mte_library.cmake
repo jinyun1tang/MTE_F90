@@ -1,0 +1,6 @@
+function(add_mte_library lib)
+  add_library(${lib} ${ARGN})
+  if (BUILD_SHARED_LIBS)
+    target_link_libraries(${lib} ${MTE_LIBRARIES})
+  endif()
+endfunction(add_mte_library)
